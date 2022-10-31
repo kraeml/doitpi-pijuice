@@ -1,0 +1,18 @@
+sudo apt update 
+sudo apt upgrade 
+sudo apt install pijuice-base
+vi /etc/sudoers.d/020_pijuice-nopasswd 
+sudo vi /etc/sudoers.d/020_pijuice-nopasswd 
+getent passwd pijuice
+id pijuice 
+sudo vi /etc/systemd/system/multi-user.target.wants/pijuice.service 
+sudo vi /usr/bin/pijuice_sys.py 
+sudo systemctl status pijuice.service 
+pijuice_cli
+sudo hwclock -w
+sudo vi /boot/config.txt 
+sudo hwclock -wv
+sudo hwclock -r
+sudo vi /etc/rc.local 
+git config --global user.email "kraeml@sesamestreet.franken.de"
+git config --global user.name "Michael Schaar"
