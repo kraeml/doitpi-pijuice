@@ -16,3 +16,13 @@ sudo hwclock -r
 sudo vi /etc/rc.local 
 git config --global user.email "kraeml@sesamestreet.franken.de"
 git config --global user.name "Michael Schaar"
+cd ../IOTstack/
+./menu.sh 
+cd ../doitpi-pijuice/
+git clone https://github.com/dalehumby/PiJuice-MQTT.git
+cd PiJuice-MQTT/
+mv config.yaml.example config.yaml
+vi config.yaml 
+pip3 install -r requirements.txt 
+python3 pijuicemqtt.py 
+sudo apt install mosquitto-clients 
